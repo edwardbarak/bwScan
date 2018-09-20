@@ -55,3 +55,7 @@ pwd = os.getcwd()
 
 # another good formula
 # Image.open(images[randint(0,len(images))]).convert('L').filter(ImageFilter.Kernel((3,3), [4, 3, 2,1,0,1,1,2,2], scale=1, offset=-1024*2.62)).convert('1', dither=False).show()
+
+# best formula so far
+ccc = lambda i: ImageEnhance.Contrast(Image.open(i).convert('L')).enhance(1.5).convert('1', dither=False).save('/home/null/git/bwScan/images/all/contrasted/' + i[:-3] + 'png', format='PNG', optimize=True)
+
